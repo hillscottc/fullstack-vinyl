@@ -16,4 +16,4 @@ git clone git@github.com:hillscottc/fullstack-vinyl.git
 Then, in one terminal, run `npm start` in the `server` directory.
 And in another terminal, run `npm start` in the `client` directory.
 
-App will be running at `http://localhost:3000/`
+App will be running at <http://localhost:3000/>
