@@ -1,0 +1,11 @@
+.album-row {
+  display: flex;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  /* padding-left: 10px; */
+}
+
+.album-row__field {
+  padding: 20px 10px;
+  width: 100px;
+}

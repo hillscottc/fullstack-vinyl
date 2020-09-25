@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
+import AlbumAdd from "./components/AlbumAdd";
+import AlbumList from "./components/AlbumList";
+import "./App.css";
+
+const HOST_URL = "http://localhost:3001";
 
 function App() {
   const [albums, setAlbums] = useState(false);
 
-  useEffect(() => {
-    getAlbum();
-  }, []);
-
-  function getAlbum() {
-    fetch("http://localhost:3001")
-      .then((response) => {
-        return response.text();
-      })
-      .then((data) => {
-        setAlbums(data);
-      });
+  function getAlbums() {
+    fetch(HOST_URL)
+      .then((response) => response.json())
+      .then((data) => setAlbums(data));
   }
-
   function createAlbum() {
     let title = prompt("Enter album name");
     let email = prompt("Enter album title");
@@ -33,7 +29,7 @@ function App() {
       })
       .then((data) => {
         alert(data);
-        getAlbum();
+        getAlbums();
       });
   }
 
@@ -48,17 +44,22 @@ function App() {
       })
       .then((data) => {
         alert(data);
-        getAlbum();
+        getAlbums();
       });
   }
 
+  useEffect(() => {
+    getAlbums();
+  }, []);
+
   return (
-    <div>
-      {albums ? albums : "There is no album data available"}
-      <br />
+    <div className="App">
+      <h2>VinylStars</h2>
       <button onClick={createAlbum}>Add</button>
-      <br />
+      &nbsp;&nbsp;
       <button onClick={deleteAlbum}>Delete</button>
+      <AlbumAdd />
+      <AlbumList albums={albums} />
     </div>
   );
 }
