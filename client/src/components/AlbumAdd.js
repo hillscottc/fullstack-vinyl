@@ -25,6 +25,8 @@ export default function AlbumAdd({ createAlbum }) {
     setShowNew(false);
   };
 
+
+
   const showNewClass = showNew ? "show-new" : "";
 
   return (

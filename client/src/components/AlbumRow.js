@@ -1,7 +1,7 @@
 import React from "react";
 import "./AlbumRow.css";
 
-export default function AlbumRow({ album }) {
+export default function AlbumRow({ album, deleteAlbum }) {
   const {
     id,
     artist,
@@ -13,8 +13,14 @@ export default function AlbumRow({ album }) {
     updated_at,
   } = album;
 
+  const handleDelete = (id, e) => {
+    e.preventDefault();
+    deleteAlbum(id);
+  };
+
   return (
     <div className="album-row">
+      <button onClick={(e) => handleDelete(id, e)}>X</button>
       <div className="album-row__field">{id}</div>
       <div className="album-row__field">{artist}</div>
       <div className="album-row__field">{title}</div>

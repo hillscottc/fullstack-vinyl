@@ -30,9 +30,7 @@ function App() {
       });
   }
 
-  function deleteAlbum() {
-    let id = prompt("Enter album id");
-
+  function deleteAlbum(id) {
     fetch(`http://localhost:3001/albums/${id}`, {
       method: "DELETE",
     })
@@ -52,11 +50,8 @@ function App() {
   return (
     <div className="App">
       <h2>VinylStars</h2>
-      {/* <button onClick={createAlbum}>Add</button> */}
-      &nbsp;&nbsp;
-      <button onClick={deleteAlbum}>Delete</button>
       <AlbumAdd createAlbum={createAlbum} />
-      <AlbumList albums={albums} />
+      <AlbumList albums={albums} deleteAlbum={deleteAlbum} />
     </div>
   );
 }

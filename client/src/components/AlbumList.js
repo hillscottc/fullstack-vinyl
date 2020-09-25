@@ -2,11 +2,12 @@ import React from "react";
 import AlbumRow from "./AlbumRow";
 import "./AlbumList.css";
 
-export default function AlbumList({ albums }) {
+export default function AlbumList({ albums, deleteAlbum }) {
   function handleExport(e) {
     e.preventDefault();
     console.log("The link was clicked.");
   }
+
   return (
     <section>
       <h3>Search</h3>
@@ -34,7 +35,13 @@ export default function AlbumList({ albums }) {
           {!albums && <div>"There is no album data available."</div>}
           {albums &&
             albums.map((album) => {
-              return <AlbumRow key={album.id} album={album} />;
+              return (
+                <AlbumRow
+                  key={album.id}
+                  album={album}
+                  deleteAlbum={deleteAlbum}
+                />
+              );
             })}
         </div>
         <button className="album-add__export-btn" onClick={handleExport}>
