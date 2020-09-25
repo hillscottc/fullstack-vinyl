@@ -10,16 +10,6 @@ export default function AlbumList({ albums, deleteAlbum }) {
 
   return (
     <section>
-      <h3>Search</h3>
-      <div className="search-param">
-        <label htmlFor="searchArtist">Artist contains: </label>
-        <input id="searchArtist" type="text" placeholder="Artist" />
-      </div>
-      <div className="search-param">
-        <label htmlFor="searchTitle">Title contains: </label>
-        <input id="searchTitle" type="text" placeholder="Title" />
-      </div>
-
       <div className="search-grid">
         <div className="search-grid__header">
           <div className="search-grid__header__item">Id</div>

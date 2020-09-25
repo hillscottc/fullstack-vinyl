@@ -11,17 +11,6 @@
   display: block;
 }
 
-.album-add__header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.album-add__header__title {
-  margin-right: 30px;
-  font-size: 21px;
-}
-
 .album-add__btn {
   background-color: #4caf50;
   border: none;

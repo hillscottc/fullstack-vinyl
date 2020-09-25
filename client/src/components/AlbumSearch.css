@@ -1,0 +1,7 @@
+.album-search {
+  display: none;
+}
+
+.album-search.show-search {
+  display: block;
+}

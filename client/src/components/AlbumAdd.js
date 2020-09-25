@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import "./AlbumAdd.css";
 
-export default function AlbumAdd({ createAlbum }) {
-  const [showNew, setShowNew] = useState(false);
+export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
   const [artist, setArtist] = useState("");
   const [title, setTitle] = useState("");
-
-  function handleShowNew(e, setTo = true) {
-    e.preventDefault();
-    setShowNew(setTo);
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,26 +14,12 @@ export default function AlbumAdd({ createAlbum }) {
     createAlbum(data);
   };
 
-  const handleCancel = (e) => {
-    e.preventDefault();
-    setShowNew(false);
-  };
-
-
-
-  const showNewClass = showNew ? "show-new" : "";
+  const showNewClass = showAddNew ? "show-new" : "";
 
   return (
     <section className="album-add">
-      <div className="album-add__header">
-        <div className="album-add__header__title">Albums</div>
-        <button className="album-add__btn" onClick={handleShowNew}>
-          New
-        </button>
-      </div>
       <div className={`album-add__new ${showNewClass}`}>
-        <h2>Add new:</h2>
-
+        <h3>Add new</h3>
         <form onSubmit={handleSubmit}>
           <div className="search-param">
             <label htmlFor="newArtist">Artist: </label>
@@ -63,7 +43,7 @@ export default function AlbumAdd({ createAlbum }) {
           </div>
           <div>
             <input type="submit" value="Submit" />
-            <button className="" onClick={handleCancel}>
+            <button className="" onClick={(e) => handleHideNew(e)}>
               Cancel
             </button>
           </div>
