@@ -2,7 +2,6 @@ import React from "react";
 import "./AlbumSearch.css";
 
 export default function AlbumSearch({ showSearch }) {
-  console.log("showSearch....", showSearch);
   const showSearchClass = showSearch ? "show-search" : "";
 
   return (

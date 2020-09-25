@@ -1,4 +1,5 @@
 import React from "react";
+import * as XDate from "xdate";
 import "./AlbumRow.css";
 
 export default function AlbumRow({ album, deleteAlbum }) {
@@ -18,6 +19,10 @@ export default function AlbumRow({ album, deleteAlbum }) {
     deleteAlbum(id);
   };
 
+  const parsedUpdated = new XDate(updated_at);
+  const parsedCreateed = new XDate(created_at);
+  const dateFormat = "M/d/yy h(:mm)TT";
+
   return (
     <div className="album-row">
       <button onClick={(e) => handleDelete(id, e)}>X</button>
@@ -27,8 +32,12 @@ export default function AlbumRow({ album, deleteAlbum }) {
       <div className="album-row__field">{year}</div>
       <div className="album-row__field">{condition}</div>
       <div className="album-row__field">{thumb}</div>
-      <div className="album-row__field">{updated_at}</div>
-      <div className="album-row__field">{created_at}</div>
+      <div className="album-row__field">
+        {parsedUpdated.toString(dateFormat)}
+      </div>
+      <div className="album-row__field">
+        {parsedCreateed.toString(dateFormat)}
+      </div>
     </div>
   );
 }
