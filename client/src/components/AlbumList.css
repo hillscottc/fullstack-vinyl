@@ -6,19 +6,19 @@ label {
   margin-bottom: 10px;
 }
 
-.search-grid {
+.grid {
 }
 
-.search-grid__header {
+.grid__header {
   display: flex;
   border-top: 1px solid;
   border-bottom: 1px solid;
 }
 
-.search-grid__header__item {
+.grid__header__item {
   padding: 20px 10px;
   width: 100px;
 }
 
-.search-grid__body {
+.grid__body {
 }
