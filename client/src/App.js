@@ -13,16 +13,13 @@ function App() {
       .then((response) => response.json())
       .then((data) => setAlbums(data));
   }
-  function createAlbum() {
-    let title = prompt("Enter album name");
-    let email = prompt("Enter album title");
-
+  function createAlbum(data) {
     fetch("http://localhost:3001/albums", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, email }),
+      body: JSON.stringify(data),
     })
       .then((response) => {
         return response.text();
@@ -55,10 +52,10 @@ function App() {
   return (
     <div className="App">
       <h2>VinylStars</h2>
-      <button onClick={createAlbum}>Add</button>
+      {/* <button onClick={createAlbum}>Add</button> */}
       &nbsp;&nbsp;
       <button onClick={deleteAlbum}>Delete</button>
-      <AlbumAdd />
+      <AlbumAdd createAlbum={createAlbum} />
       <AlbumList albums={albums} />
     </div>
   );

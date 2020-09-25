@@ -2,6 +2,15 @@
   margin-bottom: 25px;
 }
 
+.album-add__new {
+  display: none;
+}
+
+.album-add__new.show-new {
+  margin-bottom: 25px;
+  display: block;
+}
+
 .album-add__header {
   display: flex;
   align-items: center;
