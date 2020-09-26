@@ -1,0 +1,24 @@
+{
+  "name": "fullstack-vinyl",
+  "version": "1.0.0",
+  "description": "node express backend for vinyl album app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd server && npm run start\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hillscottc/fullstack-vinyl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hillscottc/fullstack-vinyl/issues"
+  },
+  "homepage": "https://github.com/hillscottc/fullstack-vinyl#readme",
+  "keywords": [],
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
