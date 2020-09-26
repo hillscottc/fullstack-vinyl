@@ -19,6 +19,21 @@ const getAlbums = () => {
   });
 };
 
+const findAlbumsByArtist = (artist) => {
+  return new Promise(function (resolve, reject) {
+    pool.query(
+      "SELECT * FROM albums WHERE artist LIKE $1",
+      ["%" + artist + "%"],
+      (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(results.rows);
+      }
+    );
+  });
+};
+
 const createAlbum = (body) => {
   return new Promise(function (resolve, reject) {
     const { artist, title, year, condition, thumb } = body;
@@ -55,4 +70,5 @@ module.exports = {
   getAlbums,
   createAlbum,
   deleteAlbum,
+  findAlbumsByArtist,
 };
