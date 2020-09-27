@@ -4,12 +4,16 @@ import "./AlbumAdd.css";
 export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
   const [artist, setArtist] = useState("");
   const [title, setTitle] = useState("");
+  const [year, setYear] = useState("");
+  const [condition, setCondition] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       artist,
       title,
+      year,
+      condition,
     };
     createAlbum(data);
   };
@@ -39,6 +43,26 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="search-param">
+            <label htmlFor="newYear">Year: </label>
+            <input
+              id="newYear"
+              type="text"
+              placeholder="2020"
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+            />
+          </div>
+          <div className="search-param">
+            <label htmlFor="newCondition">Condition: </label>
+            <input
+              id="newCondition"
+              type="text"
+              placeholder="good"
+              value={condition}
+              onChange={(e) => setCondition(e.target.value)}
             />
           </div>
           <div>
