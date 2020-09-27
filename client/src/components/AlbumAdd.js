@@ -17,7 +17,7 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
   const showNewClass = showAddNew ? "show-new" : "";
 
   return (
-    <section className="album-add">
+    <main className="album-add">
       <div className={`album-add__new ${showNewClass}`}>
         <h3>Add new</h3>
         <form onSubmit={handleSubmit}>
@@ -49,6 +49,6 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
           </div>
         </form>
       </div>
-    </section>
+    </main>
   );
 }

@@ -5,7 +5,6 @@ export default function AlbumSearch({ showSearch, getAlbumsByArtist }) {
   const [artist, setArtist] = useState("");
 
   useEffect(() => {
-    console.log("Artist is:", artist);
     getAlbumsByArtist(artist);
   }, [artist]);
 
@@ -17,7 +16,7 @@ export default function AlbumSearch({ showSearch, getAlbumsByArtist }) {
   const showSearchClass = showSearch ? "show-search" : "";
 
   return (
-    <section className={`album-search ${showSearchClass}`}>
+    <main className={`album-search ${showSearchClass}`}>
       <h3>Search</h3>
       <div className="search-param">
         <label htmlFor="searchArtist">Artist contains: </label>
@@ -33,6 +32,6 @@ export default function AlbumSearch({ showSearch, getAlbumsByArtist }) {
         <label htmlFor="searchTitle">Title contains: </label>
         <input id="searchTitle" type="text" placeholder="Title" />
       </div> */}
-    </section>
+    </main>
   );
 }

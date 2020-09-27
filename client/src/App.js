@@ -70,7 +70,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <main className="App">
       <h1>VinylStars</h1>
       <h2>Albums </h2>
       <button className="album-add__btn" onClick={handleShowNew}>
@@ -86,7 +86,7 @@ function App() {
         getAlbumsByArtist={getAlbumsByArtist}
       />
       <AlbumList albums={albums} deleteAlbum={deleteAlbum} />
-    </div>
+    </main>
   );
 }
 
