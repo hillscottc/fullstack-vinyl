@@ -1,7 +1,7 @@
 {
   "name": "fullstack-vinyl",
   "version": "1.0.0",
-  "description": "node express backend for vinyl album app",
+  "description": "vinyl album app with express server and react client",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

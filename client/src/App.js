@@ -11,8 +11,18 @@ function App() {
   const [showAddNew, setShowAddNew] = useState(false);
   const [showSearch, setShowSearch] = useState(true);
 
+  useEffect(() => {
+    getAlbums();
+  }, []);
+
   function getAlbums() {
     fetch(HOST_URL)
+      .then((response) => response.json())
+      .then((data) => setAlbums(data));
+  }
+
+  function getAlbumsByArtist(artist) {
+    fetch(`${HOST_URL}/albums?artist=${artist}`)
       .then((response) => response.json())
       .then((data) => setAlbums(data));
   }
@@ -59,10 +69,6 @@ function App() {
     setShowSearch(true);
   };
 
-  useEffect(() => {
-    getAlbums();
-  }, []);
-
   return (
     <div className="App">
       <h1>VinylStars</h1>
@@ -75,7 +81,10 @@ function App() {
         showAddNew={showAddNew}
         handleHideNew={handleHideNew}
       />
-      <AlbumSearch showSearch={showSearch} />
+      <AlbumSearch
+        showSearch={showSearch}
+        getAlbumsByArtist={getAlbumsByArtist}
+      />
       <AlbumList albums={albums} deleteAlbum={deleteAlbum} />
     </div>
   );
