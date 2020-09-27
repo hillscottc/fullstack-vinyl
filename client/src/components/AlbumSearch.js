@@ -6,7 +6,7 @@ export default function AlbumSearch({ showSearch, getAlbumsByArtist }) {
 
   useEffect(() => {
     getAlbumsByArtist(artist);
-  }, [artist]);
+  }, [artist, getAlbumsByArtist]);
 
   const handleArtist = (e) => {
     e.preventDefault();
