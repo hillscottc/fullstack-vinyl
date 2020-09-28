@@ -11,6 +11,8 @@ node express backend for vinyl album app
 CREATE ROLE vinyl WITH LOGIN PASSWORD 'vinyl';
 ALTER ROLE vinyl CREATEDB;
 CREATE DATABASE vinyl WITH OWNER vinyl;
+GRANT CONNECT ON DATABASE vinyl TO vinyl;
+GRANT USAGE ON SCHEMA public TO vinyl;
 
 \q
 ```
@@ -40,5 +42,7 @@ cd fullstack-vinyl
 npm i
 npm start
 ```
+
+(If you get errors running npm i at the top level, try running `npm i` in `fullstack-vinyl/client` and then run `npm i` in `fullstack-vinyl/server`. This was a little bumpy on my old linux box.) 
 
 App will be running at <http://localhost:3000/>
