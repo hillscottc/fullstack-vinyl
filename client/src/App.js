@@ -72,9 +72,8 @@ function App() {
   return (
     <main className="App">
       <h1>VinylStars</h1>
-      <h2>Albums </h2>
-      <button className="album-add__btn" onClick={handleShowNew}>
-        New
+      <button className="new-btn" onClick={handleShowNew}>
+        <img className="record-icon" src="record-icon.png" /> New Album
       </button>
       <AlbumAdd
         createAlbum={createAlbum}

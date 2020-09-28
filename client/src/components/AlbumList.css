@@ -6,19 +6,27 @@ label {
   margin-bottom: 10px;
 }
 
-.grid {
-}
-
 .grid__header {
   display: flex;
-  border-top: 1px solid;
+  /* border-top: 1px solid; */
   border-bottom: 1px solid;
+  padding-left: 20px;
 }
 
 .grid__header__item {
   padding: 20px 10px;
-  width: 100px;
+  width: 125px;
 }
 
-.grid__body {
+.export-btn {
+  background-color: #e3eaa7;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  border-radius: 8px;
 }

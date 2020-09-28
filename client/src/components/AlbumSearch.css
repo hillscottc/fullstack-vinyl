@@ -5,3 +5,7 @@
 .album-search.show-search {
   display: block;
 }
+
+label {
+  font-size: 18px;
+}

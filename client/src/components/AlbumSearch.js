@@ -17,9 +17,9 @@ export default function AlbumSearch({ showSearch, getAlbumsByArtist }) {
 
   return (
     <main className={`album-search ${showSearchClass}`}>
-      <h3>Search</h3>
+      <br />
       <div className="search-param">
-        <label htmlFor="searchArtist">Artist contains: </label>
+        <label htmlFor="searchArtist">Filter by Artist: </label>
         <input
           id="searchArtist"
           type="text"
@@ -28,10 +28,7 @@ export default function AlbumSearch({ showSearch, getAlbumsByArtist }) {
           onChange={handleArtist}
         />
       </div>
-      {/* <div className="search-param">
-        <label htmlFor="searchTitle">Title contains: </label>
-        <input id="searchTitle" type="text" placeholder="Title" />
-      </div> */}
+      <br />
     </main>
   );
 }

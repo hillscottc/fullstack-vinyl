@@ -66,8 +66,9 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
             />
           </div>
           <div>
-            <input type="submit" value="Submit" />
-            <button className="" onClick={(e) => handleHideNew(e)}>
+            <input className="add-btn" type="submit" value="Add" />
+            &nbsp;&nbsp;
+            <button className="cancel-btn" onClick={(e) => handleHideNew(e)}>
               Cancel
             </button>
           </div>
