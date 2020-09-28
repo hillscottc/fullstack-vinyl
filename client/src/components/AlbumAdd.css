@@ -18,3 +18,7 @@
 .cancel-btn {
   background-color: #e3eaa7;
 }
+
+.err-msg {
+  color: red;
+}

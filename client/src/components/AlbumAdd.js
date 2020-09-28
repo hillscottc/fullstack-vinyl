@@ -6,6 +6,17 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
   const [condition, setCondition] = useState("");
+  const [isValidYear, setIsValidYear] = useState(true);
+
+  const validate = () => {
+    if (year === "" || isNaN(year)) {
+      setIsValidYear(false);
+      return false;
+    } else {
+      setIsValidYear(true);
+    }
+    return true;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +26,15 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
       year,
       condition,
     };
-    createAlbum(data);
+    // const isValid = validate();
+    if (validate()) {
+      createAlbum(data);
+      // clear the fields
+      setArtist("");
+      setTitle("");
+      setYear("");
+      setCondition("");
+    }
   };
 
   const showNewClass = showAddNew ? "show-new" : "";
@@ -54,6 +73,9 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
               value={year}
               onChange={(e) => setYear(e.target.value)}
             />
+            {!isValidYear && (
+              <span className="err-msg"> Must be an integer</span>
+            )}
           </div>
           <div className="search-param">
             <label htmlFor="newCondition">Condition: </label>
@@ -69,7 +91,7 @@ export default function AlbumAdd({ createAlbum, showAddNew, handleHideNew }) {
             <input className="add-btn" type="submit" value="Add" />
             &nbsp;&nbsp;
             <button className="cancel-btn" onClick={(e) => handleHideNew(e)}>
-              Cancel
+              Done
             </button>
           </div>
         </form>
